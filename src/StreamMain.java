@@ -12,8 +12,4 @@ public class StreamMain {
                .sorted(Comparator.naturalOrder())
                .forEach(System.out::print);
    }
-
-
-
-
 }
