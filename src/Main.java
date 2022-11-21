@@ -1,32 +1,14 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<Integer> array = new ArrayList<>();
-        array.add(1);
-        array.add(2);
-        array.add(5);
-        array.add(16);
-        array.add(-1);
-        array.add(-2);
-        array.add(0);
-        array.add(32);
-        array.add(3);
-        array.add(5);
-        array.add(8);
-        array.add(23);
-        array.add(4);
-
-        Collections.sort(array);
-
-        for (int arrays : array) {
-            if (arrays > 0 && arrays % 2 == 0) {
-                System.out.print("[" + arrays  + "]");
-            }
-        }
-
-        System.out.println();
-
-        StreamMain.main();
+        List<Integer> array = Arrays.asList(1, 2, 5, 16, -1, -2, 0, 32, 3, 5, 8, 23, 4);
+        array.stream()
+                .filter(x -> x > 0)
+                .filter(x -> x % 2 == 0)
+                .sorted(Comparator.naturalOrder())
+                .forEach(System.out::println);
     }
 }
